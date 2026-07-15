@@ -1,0 +1,640 @@
+/* ==========================================================
+   1. GOOGLE FONT
+========================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+/* ==========================================================
+   2. CSS VARIABLES
+   Defines reusable colors and styles
+========================================================== */
+:root{
+
+    --bg-color: #0F172A;
+    --card-color: #1E293B;
+    --primary-color: #3B82F6;
+    --secondary-color: #60A5FA;
+    --text-color: #F8FAFC;
+    --text-light: #CBD5E1;
+    --border-color: rgba(255,255,255,.08);
+
+    --shadow:
+        0 15px 35px rgba(0,0,0,.25);
+
+    --transition: .35s ease;
+
+}
+
+
+/* ==========================================================
+   3. RESET
+========================================================== */
+
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+/* ==========================================================
+   4. HTML
+========================================================== */
+
+html{
+
+    scroll-behavior: smooth;
+
+}
+
+
+/* ==========================================================
+   5. BODY
+========================================================== */
+
+body{
+
+    font-family: "Poppins", sans-serif;
+
+    color: var(--text-color);
+
+    background: linear-gradient(
+        -45deg,
+        #0F172A,
+        #172554,
+        #111827,
+        #1E3A8A
+    );
+
+    background-size: 400% 400%;
+
+    animation: gradientBackground 15s ease infinite;
+
+}
+
+
+/* ==========================================================
+   6. GLOBAL STYLES
+========================================================== */
+
+a{
+
+    text-decoration: none;
+
+}
+
+ul{
+
+    list-style: none;
+
+}
+
+img{
+
+    max-width: 100%;
+
+    display: block;
+
+}
+
+section{
+
+    padding: 100px 10%;
+
+}
+
+main{
+
+    overflow: hidden;
+
+}
+
+
+/* ==========================================================
+   7. SECTION CONTAINER
+========================================================== */
+
+section:not(.hero){
+
+    margin: 40px 8%;
+
+    background: rgba(30,41,59,.55);
+
+    backdrop-filter: blur(10px);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 25px;
+
+    box-shadow: var(--shadow);
+
+}
+
+
+/* ==========================================================
+   8. SECTION TITLES
+========================================================== */
+
+section h2{
+
+    text-align: center;
+
+    font-size: 42px;
+
+    color: var(--secondary-color);
+
+    margin-bottom: 60px;
+
+    position: relative;
+
+}
+
+
+/* Blue line under every heading */
+
+section h2::after{
+
+    content: "";
+
+    width: 80px;
+
+    height: 4px;
+
+    background: var(--primary-color);
+
+    display: block;
+
+    margin: 12px auto;
+
+    border-radius: 10px;
+
+}
+
+
+/* ==========================================================
+   9. SCROLLBAR
+========================================================== */
+
+::-webkit-scrollbar{
+
+    width: 10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background: #0F172A;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background: var(--primary-color);
+
+    border-radius: 10px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background: var(--secondary-color);
+
+}
+
+
+/* ==========================================================
+   10. BACKGROUND ANIMATION
+========================================================== */
+
+@keyframes gradientBackground{
+
+    0%{
+
+        background-position: 0% 50%;
+
+    }
+
+    50%{
+
+        background-position: 100% 50%;
+
+    }
+
+    100%{
+
+        background-position: 0% 50%;
+
+    }
+
+}
+
+/* ==========================================================
+   11. HEADER
+========================================================== */
+
+header{
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    padding: 20px 10%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background: rgba(15,23,42,.75);
+
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid var(--border-color);
+
+    z-index: 1000;
+
+    transition: var(--transition);
+
+}
+
+
+/* ==========================================================
+   LOGO
+========================================================== */
+
+.logo{
+
+    font-size: 32px;
+
+    font-weight: 700;
+
+    color: var(--primary-color);
+
+    letter-spacing: 1px;
+
+    transition: var(--transition);
+
+}
+
+.logo:hover{
+
+    color: var(--secondary-color);
+
+    transform: scale(1.05);
+
+}
+
+
+/* ==========================================================
+   NAVIGATION
+========================================================== */
+
+nav ul{
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 35px;
+
+}
+
+
+/* Navigation Links */
+
+nav ul li a{
+
+    position: relative;
+
+    color: var(--text-color);
+
+    font-weight: 500;
+
+    transition: var(--transition);
+
+}
+
+
+/* Animated Underline */
+
+nav ul li a::after{
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -8px;
+
+    width: 0;
+
+    height: 3px;
+
+    background: var(--primary-color);
+
+    border-radius: 10px;
+
+    transition: var(--transition);
+
+}
+
+
+/* Hover Effect */
+
+nav ul li a:hover{
+
+    color: var(--secondary-color);
+
+}
+
+
+/* Underline Animation */
+
+nav ul li a:hover::after{
+
+    width: 100%;
+
+}
+
+/* ==========================================================
+   12. HERO SECTION
+========================================================== */
+
+.hero{
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 60px;
+
+    padding: 120px 10% 60px;
+
+}
+
+
+/* Hero Content */
+
+.hero-content{
+
+    flex: 1;
+
+    animation: slideLeft 1s ease;
+
+}
+
+
+/* Small Intro */
+
+.hero-tag{
+
+    color: var(--secondary-color);
+
+    font-size: 18px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* Name */
+
+.hero-content h1{
+
+    font-size: 72px;
+
+    font-weight: 700;
+
+    line-height: 1.1;
+
+    margin-bottom: 15px;
+
+    background: linear-gradient(
+        90deg,
+        var(--primary-color),
+        var(--secondary-color)
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+}
+
+
+/* Profession */
+
+.hero-content h2{
+
+    font-size: 30px;
+
+    color: var(--text-light);
+
+    margin-bottom: 25px;
+
+}
+
+
+/* Description */
+
+.hero-description{
+
+    max-width: 580px;
+
+    color: var(--text-light);
+
+    line-height: 1.8;
+
+    margin-bottom: 35px;
+
+}
+
+
+/* Hero Buttons */
+
+.hero-buttons{
+
+    display: flex;
+
+    gap: 20px;
+
+}
+
+/* ==========================================================
+   13. BUTTONS
+========================================================== */
+
+.btn{
+
+    display: inline-block;
+
+    padding: 15px 35px;
+
+    border-radius: 50px;
+
+    background: var(--primary-color);
+
+    color: white;
+
+    font-weight: 600;
+
+    transition: var(--transition);
+
+    box-shadow: 0 10px 25px rgba(59,130,246,.25);
+
+}
+
+.btn:hover{
+
+    transform: translateY(-6px);
+
+    box-shadow: 0 15px 35px rgba(59,130,246,.45);
+
+}
+
+
+/* Outline Button */
+
+.btn-outline{
+
+    background: transparent;
+
+    border: 2px solid var(--primary-color);
+
+}
+
+.btn-outline:hover{
+
+    background: var(--primary-color);
+
+}
+
+/* ==========================================================
+   14. HERO IMAGE
+========================================================== */
+
+.hero-image{
+
+    flex: 1;
+
+    display: flex;
+
+    justify-content: center;
+
+    animation: slideRight 1s ease;
+
+}
+
+
+/* Profile Image */
+
+.hero-image img{
+
+    width: 400px;
+
+    height: 400px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 6px solid var(--primary-color);
+
+    box-shadow:
+
+        0 0 30px rgba(59,130,246,.35),
+
+        0 0 80px rgba(59,130,246,.15);
+
+    animation: floatImage 5s ease-in-out infinite;
+
+}
+
+/* ==========================================================
+   15. ANIMATIONS
+========================================================== */
+
+/* Hero Text */
+
+@keyframes slideLeft{
+
+    from{
+
+        opacity: 0;
+
+        transform: translateX(-80px);
+
+    }
+
+    to{
+
+        opacity: 1;
+
+        transform: translateX(0);
+
+    }
+
+}
+
+
+/* Hero Image */
+
+@keyframes slideRight{
+
+    from{
+
+        opacity: 0;
+
+        transform: translateX(80px);
+
+    }
+
+    to{
+
+        opacity: 1;
+
+        transform: translateX(0);
+
+    }
+
+}
+
+
+/* Floating Image */
+
+@keyframes floatImage{
+
+    0%{
+
+        transform: translateY(0);
+
+    }
+
+    50%{
+
+        transform: translateY(-15px);
+
+    }
+
+    100%{
+
+        transform: translateY(0);
+
+    }
+
+}
